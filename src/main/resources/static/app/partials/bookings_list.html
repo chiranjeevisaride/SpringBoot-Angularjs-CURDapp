@@ -1,0 +1,41 @@
+<div ng-controller="BookingsController as vm">
+    <div class="row">
+        <div class="col-lg-offset-2 col-lg-7">
+            <!-- Get all bookings or only affordable ones -->
+            <div class="btn-group" role="group">
+                <button ng-click="vm.getAll()" type="button" class="btn btn-default">All</button>
+                <button ng-click="vm.getAffordable()" type="button" class="btn btn-default">Less than 100$</button>
+                <button class="btn btn-info"><a href="#/new">Create</a></button>
+            </div>
+
+            <!-- Display bookings in a table -->
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Hotel</th>
+                    <th>Nights</th>
+                    <th>Price/Night</th>
+                    <th>Total Price</th>
+                    <th style="width: 50px"></th>
+                    <th style="width: 50px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="booking in vm.bookings">
+                    <td>{{booking.hotelName}}</td>
+                    <td>{{booking.noOfNights}}</td>
+                    <td>{{booking.pricePerNight}}</td>
+                    <td>{{booking.totalPrice}}</td>
+                    <td>
+                        <button class="btn btn-danger" ng-click="vm.deleteBooking(booking.id)">Delete</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-warning"><a href="#/edit/{{booking.id}}">Edit</a></button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

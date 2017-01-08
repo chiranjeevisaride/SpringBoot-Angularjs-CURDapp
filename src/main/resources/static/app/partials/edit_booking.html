@@ -1,0 +1,18 @@
+<div class="container" ng-controller="EditController as bm">
+    <h2>Edit Booking</h2>
+    <form name="booking_form">
+        <div class="form-group">
+            <label for="hotelName">Hotel Name:</label>
+            <input type="text" class="form-control" id="hotelName" ng-model="bm.booking.hotelName">
+        </div>
+        <div class="form-group">
+            <label for="noOfNights">No Of Night:</label>
+            <input type="text" class="form-control" id="noOfNights"  ng-model="bm.booking.noOfNights">
+        </div>
+        <div class="form-group">
+            <label for="pricePerNight">Price per night:</label>
+            <input type="text" class="form-control" id="pricePerNight" ng-model="bm.booking.pricePerNight" >
+        </div>
+        <button class="btn btn-success" ng-click="bm.updateBooking(bm.booking)">Save</button>
+    </form>
+</div>

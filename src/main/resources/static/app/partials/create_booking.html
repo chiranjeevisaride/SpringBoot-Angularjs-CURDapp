@@ -1,0 +1,18 @@
+<div class="container" ng-controller="CreateController as cm">
+    <h2>Create Booking</h2>
+    <form name="create_booking_form">
+        <div class="form-group">
+            <label for="hotelName">Hotel Name:</label>
+            <input type="text" class="form-control" id="hotelName" ng-model="booking.hotelName">
+        </div>
+        <div class="form-group">
+            <label for="noOfNights">No Of Night:</label>
+            <input type="text" class="form-control" id="noOfNights"  ng-model="booking.noOfNights">
+        </div>
+        <div class="form-group">
+            <label for="pricePerNight">Price per night:</label>
+            <input type="text" class="form-control" id="pricePerNight" ng-model="booking.pricePerNight" >
+        </div>
+        <button class="btn btn-success" ng-click="cm.createBooking(booking)">Create</button>
+    </form>
+</div>
